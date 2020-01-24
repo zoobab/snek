@@ -1,0 +1,10 @@
+# To build:
+#     $ docker build -t snek .
+# To run:
+#     $ docker run -it snek
+#     Welcome to Snek version 1.3
+#     >
+
+FROM debian:unstable
+RUN apt update && apt install -yy snek-bin
+ENTRYPOINT ["/usr/bin/snek"]
